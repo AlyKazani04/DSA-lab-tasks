@@ -1,6 +1,11 @@
 # Prerequisites
 *.d
 
+# documents
+*.pdf
+*.docx
+*.txt
+
 # Compiled Object files
 *.slo
 *.lo
@@ -31,6 +36,9 @@
 *.la
 *.a
 *.lib
+
+# vs code files
+.vscode/ 
 
 # Executables
 *.exe

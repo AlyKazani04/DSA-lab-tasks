@@ -1,10 +1,15 @@
 # Prerequisites
 *.d
 
-# documents
+# Documents
 *.pdf
 *.docx
 *.txt
+
+# Output Screenshots
+*.png
+*.jpg
+*.jpeg
 
 # Compiled Object files
 *.slo

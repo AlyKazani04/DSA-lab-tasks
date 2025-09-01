@@ -55,12 +55,67 @@ class SinglyLinkedList
             tail->next = newNode;
             tail = newNode;
         }
+
+        void insertNode(int pos, int newVal)
+        {
+            if(head == nullptr)
+            {
+                cout << "List Empty." << endl;
+                return;
+            }
+
+            Node* newNode = new Node(newVal);
+            
+            Node* curr = head;
+            Node* prev = curr;
+
+            for(int i = 0; i < pos; i++)
+            {
+                prev = curr;
+                curr = curr->next;
+            }
+
+            prev->next = newNode;
+            newNode->next = curr;
+        }
+
+        void removeFirstNode()
+        {
+            Node* temp = head;
+
+            head = head->next;
+
+            delete temp;
+        }
+        
+        void removeLastNode() // class task
+        {
+            if(head == nullptr) // if no members
+            {
+                return;
+            }
+
+            if(head == tail) // if a single member
+            {
+                delete head;
+
+                head = nullptr;
+                tail = nullptr;
+
+                return;
+            }
+
+            Node* temp = head;
+            Node* prev = nullptr;
+
+            while(temp->next != nullptr) // traverse to last
+            {
+                prev = temp;        // saves second last
+                temp = temp->next;
+            }
+
+            prev->next = nullptr;
+            tail = prev;
+            delete temp;
+        }
 };
-
-int main()
-{
-    SinglyLinkedList list();
-
-
-    return 0;
-}

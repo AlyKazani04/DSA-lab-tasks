@@ -18,12 +18,10 @@ class SinglyLinkedList
 {
     private:
         Node* head;
-        Node* tail;
     public:
         SinglyLinkedList()
         {
             head = nullptr;
-            tail = nullptr;
         }
  
         void addNodeatStart(int val)
@@ -33,7 +31,6 @@ class SinglyLinkedList
             if(head == nullptr)
             {
                 head = newNode;
-                tail = newNode;
                 return;
             }
 
@@ -48,12 +45,16 @@ class SinglyLinkedList
             if(head == nullptr)
             {
                 head = newNode;
-                tail = newNode;
                 return;
             }
 
-            tail->next = newNode;
-            tail = newNode;
+            Node* temp = head;
+            while(temp->next != nullptr)
+            {
+                temp = temp->next;
+            }
+
+            temp->next = newNode;
         }
 
         void insertNode(int pos, int newVal)
@@ -95,12 +96,10 @@ class SinglyLinkedList
                 return;
             }
 
-            if(head == tail) // if a single member
+            if(head->next == nullptr) // if a single member
             {
                 delete head;
-
                 head = nullptr;
-                tail = nullptr;
 
                 return;
             }
@@ -115,7 +114,6 @@ class SinglyLinkedList
             }
 
             prev->next = nullptr;
-            tail = prev;
             delete temp;
         }
 };

@@ -159,7 +159,5 @@ int main()
     bst.insertNode(4);
     bst.insertNode(6);
 
-
-
     return 0;
 }

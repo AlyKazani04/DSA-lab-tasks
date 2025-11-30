@@ -8,9 +8,6 @@
 *.jpg
 *.jpeg
 
-# Practice Folder
-practice/
-
 # vs code files
 .vscode/ 
 

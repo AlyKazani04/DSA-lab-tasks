@@ -31,8 +31,8 @@ class priorityqueue
 
             if(front == nullptr || pri > front->priority)
             {
-                newNode = front;
-                front->next = newNode;
+                newNode->next = front;
+                front = newNode;
             }
             else
             {
